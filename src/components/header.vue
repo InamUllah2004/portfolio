@@ -45,7 +45,7 @@ export default {
         this.$router.push('/about') 
         },
         handleClick3() {
-         
+         this.$router.push('/Contact')
         }
     }
 }

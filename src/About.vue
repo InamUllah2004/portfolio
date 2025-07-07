@@ -1,6 +1,6 @@
 <template>
     <div class="About-page">
-        <h1 class="Heading">About Me</h1>
+        <h1 class="Heading2">About Me</h1>
 
         <div class="info-box" >
             <div class="personal-info">
@@ -31,8 +31,7 @@
                     <img v-for="(image, index) in images" :key="index" :src="image" :alt="image" />
                 </div>
             </div>
-
-        </div>
+          </div>
 
         <!--Education Background-->
     <div class="timeline-section">
@@ -96,11 +95,10 @@ const timelineData = [
 
 <style>
 
-.Heading {
+.Heading2 {
     color: rgb(210, 179, 57);
     font-size: 45px;
     margin-top:100px;
-    /* margin-top: -320px; */
     text-decoration: underline;
 }
 
@@ -127,7 +125,7 @@ const timelineData = [
 .personal-info {
     font-size: 16px;
     line-height: 2;
-    color: white;
+    color: black;
 }
 
 .personal-info strong {
@@ -136,7 +134,7 @@ const timelineData = [
 }
 
 .personal-info a {
-    color: white;
+    color:black;
     text-decoration: none;
 }
 
