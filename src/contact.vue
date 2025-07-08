@@ -23,16 +23,35 @@
 
 <script setup>
 import { ref } from 'vue'
+import emailjs from 'emailjs-com'
 
 const name = ref('')
 const email = ref('')
 const message = ref('')
 
+// Your EmailJS configuration
+const serviceID = 'service_0in1i6f'
+const templateID = 'template_tp9lkvs'
+const publicKey = '2YfISc9edKCdx7q6z'
+
 function handleSubmit() {
-  alert("Message sent to Inam Ullah")
-  name.value = ''
-  email.value = ''
-  message.value = ''
+  const templateParams = {
+    from_name: name.value,
+    from_email: email.value,
+    message: message.value
+  }
+
+  emailjs.send(serviceID, templateID, templateParams, publicKey)
+    .then(() => {
+      alert('Message sent to Inam Ullah')
+      name.value = ''
+      email.value = ''
+      message.value = ''
+    })
+    .catch((error) => {
+      console.error('Failed to send message:', error)
+      alert('Failed to send message. Please try again.')
+    })
 }
 
 function handleInstagramClick() {
@@ -43,6 +62,7 @@ function handleLinkedInClick() {
   window.open('https://www.linkedin.com/in/inam-ullah-5551a8311/', '_blank')
 }
 </script>
+
 
 <style>
 .contact-container {
